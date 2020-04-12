@@ -8,4 +8,4 @@ Some card sets present in the database may not be implemented in Xmage. In that 
 
 `python3 cod_to_dck.py [deck]...`
 
-For example, to convert all decks in directory, simply do `python3 cod_to_dck.py *.cod`
+To convert all decks in directory, simply do `python3 cod_to_dck.py *.cod` on Linux bash, or `python.exe .\cod_to_dck.py $(ls *.cod | % {$_.FullName})` on Windows PowerShell.
