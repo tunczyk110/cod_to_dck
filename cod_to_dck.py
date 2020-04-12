@@ -9,7 +9,7 @@ if __name__ == "__main__":
     print(f"Got {len(files)} decks to convert")
 
     print("Parsing scryfall database...")
-    with open('scryfall-default-cards.json') as card_db_file:
+    with open('scryfall-default-cards.json', encoding='utf8') as card_db_file:
         card_db = json.load(card_db_file)
 
     for fname in files:
