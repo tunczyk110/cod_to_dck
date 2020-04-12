@@ -5,12 +5,15 @@ import json
 import xml.etree.ElementTree as et
 
 if __name__ == "__main__":
+    files = sys.argv[1:]
+    print(f"Got {len(files)} decks to convert")
+
+    print("Parsing scryfall database...")
     with open('scryfall-default-cards.json') as card_db_file:
         card_db = json.load(card_db_file)
 
-    files = sys.argv[1:]
-
     for fname in files:
+        print(f"Converting {fname}...")
         tree = et.parse(fname)
 
         with open(fname.replace('cod', 'dck'), 'w') as new_file:
@@ -27,5 +30,6 @@ if __name__ == "__main__":
                     line = f"{count} [{set_code}:{collector_number}] {cardname}"
                     if zone_name == 'side':
                         line = f"SB: {line}"
-                    print(line)
                     new_file.write(f"{line}\n")
+
+    print(f"Done!")

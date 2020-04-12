@@ -6,6 +6,6 @@ Some card sets present in the database may not be implemented in Xmage. In that 
 
 ## Usage
 
-`./cod_to_dck.py [deck]...`
+`python3 cod_to_dck.py [deck]...`
 
-For example, to convert all decks in directory, simply do `./cod_to_dck.py *.cod`
+For example, to convert all decks in directory, simply do `python3 cod_to_dck.py *.cod`
